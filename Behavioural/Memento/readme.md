@@ -35,3 +35,12 @@ Caretaker (责任人)
 
 * 负责维护和管理memento对象
 * 从不对memento的内容进行操作或者测试
+
+## Binding Other Patterns
+
+```
+1、“Mementor”模式和“堆栈”的结合－“GUI界面撤销功能”的实现
+2、“Mementor”模式和“Observer”模式的结合－“通知式恢复”
+3、“Mementor”模式和“Observer”模式、“责任链”模式的结合－“链式通知恢复”
+4、“Mementor”模式和“Flyweight”模式的结合：减少相同对象的拷贝
+```
