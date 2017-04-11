@@ -1,13 +1,15 @@
-##23GoF
+## 23GoF
+
 💡 Try to remember 23 design pattern.
+
 ```
 11 for Behavioural
 7  for Structural
 5  for Creational
 ```
 
-#Relationship
+# Relationship
 ![imgs](Design-Pattern-Relationships.jpg)
 
-###Thanks
+### Thanks
 Created by GSwift team.
