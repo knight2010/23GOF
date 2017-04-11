@@ -34,20 +34,20 @@ private:
 public:
     void set(const string &str){_state = str;}
     const string &get(){return _state;}
-    Memento* CreateMemento(){return new Memento(_state);}
-    void SetMemento(Memento &memento){_state = memento.get();}
+    Memento* createMemento(){return new Memento(_state);}
+    void setMemento(Memento &memento){_state = memento.get();}
 };
  
 int main ()
 {
     Originator O;
     O.set("On");
-    cout << O.get() << endl;
+    cout << "Originator get memento :" << O.get() << endl;
      
-    Caretaker C(O.CreateMemento());
+    Caretaker C(O.createMemento());
     O.set("Off");
-    cout << O.get() << endl;
+    cout << "Originator state changed :" << O.get() << endl;
      
-    O.SetMemento(C.get());
-    cout << O.get() << endl;
+    O.setMemento(C.get());
+    cout << "The state return back :" << O.get() << endl;
 }
