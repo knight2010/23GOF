@@ -20,7 +20,7 @@ protocol MementoConvertible {
     init?(memento: Memento)
 }
 
-struct GameState: MementoConvertible {
+struct Originator: MementoConvertible {
     
     private struct Keys {
         static let chapter = "com.valve.halflife.chapter"
@@ -52,7 +52,7 @@ struct GameState: MementoConvertible {
 /*:
  Caretaker
  */
-enum CheckPoint {
+enum Caretaker {
     static func save(_ state: MementoConvertible, saveName: String) {
         let defaults = UserDefaults.standard
         defaults.set(state.memento, forKey: saveName)
@@ -68,21 +68,25 @@ enum CheckPoint {
 /*:
  ### Usage
  */
-var gameState = GameState(chapter: "Black Mesa Inbound", weapon: "Crowbar")
+var gameState = Originator(chapter: "Black Mesa Inbound", weapon: "Crowbar")
 
 gameState.chapter = "Anomalous Materials"
 gameState.weapon = "Glock 17"
-CheckPoint.save(gameState, saveName: "gameState1")
+Caretaker.save(gameState, saveName: "gameState1")
 
 gameState.chapter = "Unforeseen Consequences"
 gameState.weapon = "MP5"
-CheckPoint.save(gameState, saveName: "gameState2")
+Caretaker.save(gameState, saveName: "gameState2")
 
 gameState.chapter = "Office Complex"
 gameState.weapon = "Crossbow"
-CheckPoint.save(gameState, saveName: "gameState3")
+Caretaker.save(gameState, saveName: "gameState3")
 
-if let memento = CheckPoint.restore(saveName: "gameState1") {
-    let finalState = GameState(memento: memento)
+if let memento = Caretaker.restore(saveName: "gameState1") {
+    let finalState = Originator(memento: memento)
     dump(finalState)
 }
+
+/*:
+ >**Further Examples:** [Design Patterns in Swift](https://github.com/knight2010/23GOF)
+ */
