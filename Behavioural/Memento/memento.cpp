@@ -42,12 +42,14 @@ int main ()
 {
     Originator O;
     O.set("On");
-    cout << "Originator get memento :" << O.get() << endl;
-     
+    cout << "Originator get state :" << O.get() << endl;
+    // Originator create memento 
     Caretaker C(O.createMemento());
+    O.set("open");
+    cout << "Originator get state :" << O.get() << endl;
     O.set("Off");
-    cout << "Originator state changed :" << O.get() << endl;
+    cout << "Originator get state :" << O.get() << endl;
      
     O.setMemento(C.get());
-    cout << "The state return back :" << O.get() << endl;
+    cout << "Originator get state :" << O.get() << endl;
 }
