@@ -2,6 +2,8 @@
 
 ```
 Without violation encapsulation, capture and externalize and object's internal state so that the object can be restored to this state later.
+
+备忘录对象是一个用来存储另外一个对象内部状态的快照的对象。备忘录模式的用意是在不破坏封装的条件下，将一个对象的状态捕捉住，并外部化存储起来，从而可以在将来合适的时候把这个对象还原到存储起来的状态。
 ```
 
 [Contribution guidelines for 23GoF](../../readme.md)
@@ -11,14 +13,15 @@ Without violation encapsulation, capture and externalize and object's internal s
 ## Implemention
 
 ```
-Caretaker.java     //Implemention in java
-memento.cpp        //Implemention in cpp
-memento.playground //Implemention in swift
+Caretaker.java               //Implemention in java
+memento.cpp                  //Implemention in cpp
+MementoPlayground.playground //Implemention in swift
 ```
 
 ## Memento Pattern Role Responsibility
 
 在Memento模式中,有如下角色:
+
 Memento (备忘录)
 
 * 存储Originator的内部状态. 根据Originator的需要.可以存储任意的内部状态.
@@ -36,13 +39,21 @@ Caretaker (责任人)
 * 负责维护和管理memento对象
 * 从不对memento的内容进行操作或者测试
 
-## Binding Other Patterns
+## Extention With Other Patterns
 
 ```
-1、“Mementor”模式和“堆栈”的结合－“GUI界面撤销功能”的实现
+1、“Mementor”模式和“堆栈”的结合－“GUI界面撤销功能”的实现,保存游戏关卡,git commit信息
 2、“Mementor”模式和“Observer”模式的结合－“通知式恢复”
-3、“Mementor”模式和“Observer”模式、“责任链”模式的结合－“链式通知恢复”
+3、“Mementor”模式和“责任链”模式的结合－“链式通知恢复”
 4、“Mementor”模式和“Flyweight”模式的结合：减少相同对象的拷贝
+```
+
+## Relative Patterns
+
+```
+Iterator,迭代器
+
+Command,命令模式
 ```
 
 ## Advantage & Disadvantage
