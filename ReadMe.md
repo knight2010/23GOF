@@ -10,6 +10,12 @@
 5  for Creational
 ```
 
+### OOA TO OOD
+
+![PYRAMID](pyramid.jpg)
+
+![design-translate](model-translate.jpg)
+
 # Relationship
 
 ![imgs](Design-Pattern-Relationships.jpg)
